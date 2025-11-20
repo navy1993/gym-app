@@ -1,0 +1,26 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <!-- Sidebar Drawer -->
+    <mat-sidenav #drawer class="sidenav" [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile">
+
+        <app-sidebar (closeDrawer)="drawer.close()"></app-sidebar>
+    </mat-sidenav>
+
+    <!-- Content -->
+    <mat-sidenav-content>
+
+        <!-- Top Bar -->
+        <mat-toolbar color="primary" class="topbar">
+            <button mat-icon-button (click)="drawer.toggle()" aria-label="Open nav">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="toolbar-title">Gym Manager</span>
+        </mat-toolbar>
+
+        <!-- Router Content -->
+        <main class="main-content">
+            <router-outlet></router-outlet>
+        </main>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

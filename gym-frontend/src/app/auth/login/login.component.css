@@ -1,0 +1,36 @@
+.login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+}
+
+.title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  margin: 0 0 1.25rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.form-actions {
+  margin-top: 0.5rem;
+}
+
+.hint {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}

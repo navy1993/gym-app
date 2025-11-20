@@ -1,0 +1,83 @@
+<section class="page workouts">
+  <header class="page-header">
+    <h1>Monthly workout plans</h1>
+  </header>
+
+  <div class="card">
+    <h2 class="card-title">Select member</h2>
+    <div class="form-row">
+      <label for="member">Member</label>
+      <select
+        id="member"
+        [value]="selectedUserId || ''"
+        (change)="onUserChange($event.target.value)"
+      >
+        <option *ngFor="let u of users" [value]="u.id">{{ u.name }} ({{ u.phone }})</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="selectedUserId">
+    <h2 class="card-title">Create monthly plan</h2>
+    <form [formGroup]="form" (ngSubmit)="createWorkout()" class="form">
+      <div class="form-row">
+        <label for="month">Month</label>
+        <input id="month" type="month" formControlName="month" />
+      </div>
+
+      <div class="form-row">
+        <label for="content">Workout plan</label>
+        <textarea
+          id="content"
+          rows="6"
+          formControlName="content"
+          placeholder="e.g. Mon: Chest & Triceps..."
+        ></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="saving">
+          {{ saving ? 'Saving...' : 'Save plan' }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card" *ngIf="selectedUserId">
+    <h2 class="card-title">Plans for this member</h2>
+
+    <div *ngIf="loading" class="muted">Loading plans...</div>
+
+    <div class="table-wrapper" *ngIf="!loading && workouts.length">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Sent at</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let w of workouts">
+          <td>{{ w.month }}</td>
+          <td>{{ w.sentAt | date: 'medium' }}</td>
+          <td class="actions">
+            <button
+              mat-button
+              color="primary"
+              type="button"
+              (click)="sendWhatsapp(w)"
+            >
+              Send via WhatsApp
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div *ngIf="!loading && !workouts.length" class="muted">
+      No plans saved yet for this member.
+    </div>
+  </div>
+</section>

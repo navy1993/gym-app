@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page {
+  padding: 1rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-row.inline {
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+.form-row.inline > div {
+  flex: 1;
+}
+
+label {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.checkbox-row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  text-align: left;
+  font-weight: 500;
+  background: #fafafa;
+}
+
+.table .actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.muted {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 1.5rem 2rem;
+  }
+
+  .card {
+    padding: 1.25rem 1.5rem;
+  }
+}

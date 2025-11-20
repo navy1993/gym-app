@@ -1,0 +1,27 @@
+.sidebar-header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-weight: 700;
+  }
+  
+  .mat-list-item {
+    border-radius: 8px;
+    margin: 6px;
+  }
+  
+  .sidebar-footer {
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .small {
+    font-size: 12px;
+    color: #9aa0a6;
+  }
+  
+  .muted {
+    color: #6b7280;
+  }
+  

@@ -1,0 +1,47 @@
+<section class="page user-form">
+  <header class="page-header">
+    <h1>{{ isEdit ? 'Edit Member' : 'Add Member' }}</h1>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="save()" class="form">
+    <div class="form-row">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" />
+      <div class="muted" *ngIf="nameCtrl?.touched && nameCtrl.invalid">
+        <span *ngIf="nameCtrl.errors?.['required']">Name is required.</span>
+        <span *ngIf="nameCtrl.errors?.['minlength']">Name is too short.</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" formControlName="phone" />
+      <div class="muted" *ngIf="phoneCtrl?.touched && phoneCtrl.invalid">
+        <span *ngIf="phoneCtrl.errors?.['required']">Phone is required.</span>
+        <span *ngIf="phoneCtrl.errors?.['pattern']">Enter a valid phone number.</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <div class="muted" *ngIf="emailCtrl?.touched && emailCtrl.invalid">
+        <span *ngIf="emailCtrl.errors?.['email']">Enter a valid email address.</span>
+      </div>
+    </div>
+
+    <div class="form-row checkbox-row">
+      <label>
+        <input type="checkbox" formControlName="whatsappOptIn" />
+        Receive WhatsApp updates
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="saving || form.invalid">
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+      <button mat-button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</section>
