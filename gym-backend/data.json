@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "2",
+      "name": "NIKHIL RAUL2",
+      "phone": "09952007454",
+      "email": "nikhilbact@gmail.com",
+      "whatsappOptIn": true,
+      "createdAt": "2025-11-20T11:24:52.592Z"
+    },
+    {
+      "id": "3",
+      "name": "Alisha Kamadev Raulo",
+      "phone": "07977033215",
+      "email": "alisharaulo90@gmail.com",
+      "whatsappOptIn": false,
+      "createdAt": "2025-11-20T11:25:00.002Z"
+    },
+    {
+      "id": "4",
+      "name": "Mr. Babula Raul",
+      "phone": "hvjh",
+      "email": "nikhilbact@gmail.com",
+      "whatsappOptIn": true,
+      "createdAt": "2025-11-20T13:15:04.650Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "1",
+      "userId": "1",
+      "planName": "trainer pack",
+      "startDate": "2025-11-04",
+      "endDate": "2025-12-26",
+      "autoRenew": true,
+      "createdAt": "2025-11-20T11:30:28.784Z"
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "planName": "top plan",
+      "startDate": "2025-11-05",
+      "endDate": "2025-11-30",
+      "autoRenew": false,
+      "createdAt": "2025-11-20T12:58:55.489Z"
+    }
+  ],
+  "workouts": [],
+  "nextUserId": 5,
+  "nextSubscriptionId": 3,
+  "nextWorkoutId": 1
+}
